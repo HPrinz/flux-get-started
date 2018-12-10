@@ -34,22 +34,3 @@ spec:
           containerPort: 3000
           name: http
           protocol: TCP
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: hellonode
-  namespace: demo
-  labels:
-    app: hellonode
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: http-server
-  selector:
-    app: hellonode
-
-
