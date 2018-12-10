@@ -24,15 +24,15 @@ spec:
         prometheus.io/scrape: "true"
       labels:
         app: hellonode
-      containers:
-      - name: hello-node-container
-        image: gcr.io/hanna-prinz/hellonode
-        imagePullPolicy: Always
-        ports:
-        - name: http-server
-          containerPort: 3000
-          name: http
-          protocol: TCP
+    containers:
+    - name: hello-node-container
+      image: gcr.io/hanna-prinz/hellonode
+      imagePullPolicy: Always
+      ports:
+      - name: http-server
+        containerPort: 3000
+        name: http
+        protocol: TCP
 ---
 
 apiVersion: v1
