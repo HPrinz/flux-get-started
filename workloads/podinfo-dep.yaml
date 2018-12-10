@@ -4,20 +4,11 @@ kind: Deployment
 metadata:
   name: hellonode
   namespace: demo
-  labels:
-    app: hellonode
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.init: regexp:^3.*
     flux.weave.works/tag.hellonoded: semver:~1.3
 spec:
-  strategy:
-    rollingUpdate:
-      maxUnavailable: 0
-    type: RollingUpdate
-  selector:
-    matchLabels:
-      app: hellonode
   template:
     metadata:
       annotations:
@@ -47,7 +38,6 @@ spec:
   - port: 80
     targetPort: http-server
     protocol: TCP
-    targetPort: http
   selector:
     app: hellonode
 
