@@ -32,5 +32,3 @@ spec:
         ports:
         - name: http-server
           containerPort: 3000
-          name: http
-          protocol: TCP
