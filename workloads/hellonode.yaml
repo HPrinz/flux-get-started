@@ -17,22 +17,24 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: podinfo
+      app: hellonode
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
       labels:
         app: hellonode
-    containers:
-    - name: hello-node-container
-      image: gcr.io/hanna-prinz/hellonode
-      imagePullPolicy: Always
-      ports:
-      - name: http-server
-        containerPort: 3000
-        name: http
-        protocol: TCP
+    spec:
+      containers:
+      - name: hello-node-container
+        image: gcr.io/hanna-prinz/hellonode
+        imagePullPolicy: Always
+        ports:
+        - name: http-server
+          containerPort: 3000
+          name: http
+          protocol: TCP
+
 ---
 
 apiVersion: v1
