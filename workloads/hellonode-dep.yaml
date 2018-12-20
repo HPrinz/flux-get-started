@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: hello-node-container
-        image: eu.gcr.io/hanna-prinz/gke-node-hello-world:6601ec99cc444693c2a9ad8d8dea32ba6d665b17
+        image: eu.gcr.io/hanna-prinz/gke-node-hello-world:2f84a8763eefa85c96ee982ace868b15a9d5f0db
         imagePullPolicy: Always
         ports:
         - name: http-server
