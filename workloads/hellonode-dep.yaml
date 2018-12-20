@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hellonode
+  name: gke-node-hello-world
   namespace: demo
   labels:
-    app: hellonode
+    app: gke-node-hello-world
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.init: regexp:^3.*
@@ -17,17 +17,17 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: hellonode
+      app: gke-node-hello-world
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
       labels:
-        app: hellonode
+        app: gke-node-hello-world
     spec:
       containers:
       - name: hello-node-container
-        image: gcr.io/hanna-prinz/hellonode
+        image: gcr.io/hanna-prinz/gke-node-hello-world
         imagePullPolicy: Always
         ports:
         - name: http-server
